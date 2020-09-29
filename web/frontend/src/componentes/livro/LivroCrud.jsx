@@ -15,7 +15,7 @@ const initialState = {
 
 const headerProps = {
     icon: 'Livros',
-    title: 'Usuários',
+    title: 'Livros',
     subtitle: 'Cadastro de Livros: Incluir, Listar, Alterar e Excluir!'
 }
 

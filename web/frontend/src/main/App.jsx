@@ -17,7 +17,7 @@ export default props =>
         <Logo />
         <Nav />
         <Routes />
-        <Home/>
+        {/* <Home/> */}
         <Footer />
     </div>
     </BrowserRouter>

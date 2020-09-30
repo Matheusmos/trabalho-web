@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import Main from '../template/Main'
 
-const baseUrl = 'http://localhost:3001/livro'
+const baseUrl = 'http://localhost:3001/livros'
 
 const initialState = {
     livros:{nome: '', autor:''},
@@ -26,6 +26,18 @@ export default class LivroCrud extends Component{
         this.setState({livros: initialState.livros})
     }
 
+    save(){
+        const livros = this.state.livros
+        const method = livros.id ? 'put' : 'post'
+        const url = livros.id ? `${baseUrl}/${livros.id}` : baseUrl
+        axios[method](url, livros)
+        .then(resp =>{
+            const list = this.getUpdateList(resp.data)
+            this.setState({livros: initialState.livros, list})
+        })
+    }
+
+    
     getUpdateList(livros){
         const list = this.state.list.filter(u => u.id !== livros.id)
         list.unshift(livros)
@@ -34,7 +46,7 @@ export default class LivroCrud extends Component{
 
     updateField(event){
         const livros = {...this.state.livros}
-        livros[event.target.nome] = event.target.value
+        livros[event.target.name] = event.target.value
         this.setState({livros})
     }
 
@@ -67,7 +79,9 @@ export default class LivroCrud extends Component{
                         </div>
 
                     </div>
-                    <hr />
+                     
+                </div>
+                <hr />
                     <div className="row">
                         <div className="col-12 d-flex justify-content-end">
                             <button className="btn btn-primary"
@@ -82,24 +96,13 @@ export default class LivroCrud extends Component{
 
                         </div>
                     
-                    </div> 
-                </div>
+                    </div>
 
             </div>
         )
     }
 
 
-    save(){
-        const livros = this.state.livros
-        const method = livros.id ? 'put' : 'post'
-        const url = livros.id ? `${baseUrl}/${livros.id}` : baseUrl
-        axios[method](url, livros)
-        .then(resp =>{
-            const list = this.getUpdateList(resp.data)
-            this.setState({livros: initialState.livros, list})
-        })
-    }
     render(){
         return(
             <Main {...headerProps}>

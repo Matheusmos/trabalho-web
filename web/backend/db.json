@@ -1,15 +1,29 @@
 {
-    "livros":[{
-        "id": 1,
-        "nome": "A Batalha do Apocalipse",
-        "autor": "Eduardo Spohr"
-    },{
-        "id":2,
-        "nome": "Porque fazemos o que fazemos",
-        "autor": "Mario Sergio Cortella"
-    },{
-        "id":3,
-        "nome": "Paraíso Perdido",
-        "autor": "Eduardo Spohr"
-    }]
+  "livros": [
+    {
+      "id": 1,
+      "nome": "A Batalha do Apocalipse",
+      "autor": "Eduardo Spohr"
+    },
+    {
+      "id": 2,
+      "nome": "Porque fazemos o que fazemos",
+      "autor": "Mario Sergio Cortella"
+    },
+    {
+      "id": 3,
+      "nome": "Paraíso Perdido",
+      "autor": "Eduardo Spohr"
+    },
+    {
+      "nome": "Seja Foda",
+      "autor": "Gabriel Carneiro",
+      "id": 4
+    },
+    {
+      "nome": "O Senhor dos Anéis",
+      "autor": "Tolkien",
+      "id": 5
+    }
+  ]
 }

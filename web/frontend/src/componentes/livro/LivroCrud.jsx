@@ -22,6 +22,12 @@ const headerProps = {
 export default class LivroCrud extends Component{
     state = {...initialState}
 
+
+    componentWillMount(){
+        axios(baseUrl).then(resp =>{
+            this.setState({list: resp.data})
+        })
+    }
     clear(){
         this.setState({livros: initialState.livros})
     }
@@ -38,9 +44,9 @@ export default class LivroCrud extends Component{
     }
 
     
-    getUpdateList(livros){
+    getUpdateList(livros, add = true){
         const list = this.state.list.filter(u => u.id !== livros.id)
-        list.unshift(livros)
+        if(add) list.unshift(livros)
         return list
     }
 
@@ -89,7 +95,7 @@ export default class LivroCrud extends Component{
                                 Salvar
                             </button>
 
-                            <button className="btn btn-secundary ml-2"
+                            <button className="btn btn-secondary ml-2"
                                 onClick={e => this.clear(e)}>
                                 Cancelar
                             </button>
@@ -102,15 +108,64 @@ export default class LivroCrud extends Component{
         )
     }
 
+    load(livros){
+        this.setState({livros})
+    }
+
+    remove(livros){
+        axios.delete(`${baseUrl}/${livros.id}`).then(
+            resp => {
+               const list = this.getUpdateList(livros,false)
+               this.setState({list}) 
+            }
+        )
+    }
+
+    renderRows(){
+        return this.state.list.map(livros => {
+            return(
+                <tr key={livros.id}>
+                    <td>{livros.id}</td>
+                    <td>{livros.nome}</td>
+                    <td>{livros.autor}</td>
+                    <td>
+                        <button className="btn btn-warning" onClick={() => this.load(livros)}>
+                            <i className="fa fa-pencil"></i>
+
+                        </button>
+                        <button className="btn btn-danger ml-2" onClick={() => this.remove(livros)}>
+                            <i className="fa fa-trash"></i>
+                        </button>
+                    </td>
+
+                </tr>
+            )
+        })
+    }
+
+    renderTable(){
+        return(
+            <table className="table mt-4">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Autor</th>
+                    </tr>
+                </thead>
+                <tbody>{this.renderRows()}</tbody>
+
+            </table>
+        )
+    }
+
 
     render(){
         return(
             
             <Main {...headerProps}>
                 {this.renderForm()}
-                <div>
-                    Olá olá <hr/> 
-                </div>
+                {this.renderTable()}
             </Main>
             
         )

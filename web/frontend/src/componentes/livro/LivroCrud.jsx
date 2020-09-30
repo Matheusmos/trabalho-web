@@ -14,7 +14,7 @@ const initialState = {
 
 
 const headerProps = {
-    icon: 'Livros',
+    icon: 'fas fa-book',
     title: 'Livros',
     subtitle: 'Cadastro de Livros: Incluir, Listar, Alterar e Excluir!'
 }
@@ -105,9 +105,14 @@ export default class LivroCrud extends Component{
 
     render(){
         return(
+            
             <Main {...headerProps}>
                 {this.renderForm()}
+                <div>
+                    Olá olá <hr/> 
+                </div>
             </Main>
+            
         )
     }
 }

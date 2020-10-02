@@ -12,7 +12,7 @@ export default props =>
             </Link>
 
             <Link to ="/livro">
-                <i className="fas fa-book"></i>Livros
+                <i className="fa fa-book"></i>Livros
             </Link>
         </nav>
     </aside>

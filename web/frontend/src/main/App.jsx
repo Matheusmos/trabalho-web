@@ -3,7 +3,6 @@ import {BrowserRouter} from 'react-router-dom'
 import Routes from './Routes'
 import Logo from '../componentes/template/Logo'
 import Nav from '../componentes/template/Nav'
-import Home from '../componentes/home/Home'
 import Footer from '../componentes/template/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -17,7 +16,6 @@ export default props =>
         <Logo />
         <Nav />
         <Routes />
-        {/* <Home/> */}
         <Footer />
     </div>
     </BrowserRouter>

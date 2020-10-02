@@ -14,5 +14,9 @@ export default props =>
             <Link to ="/livro">
                 <i className="fa fa-book"></i>Livros
             </Link>
+
+            <Link to ="/play">
+                <i className="fa fa-play"></i>Vídeo
+            </Link>
         </nav>
     </aside>

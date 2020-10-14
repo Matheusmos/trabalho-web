@@ -1,29 +1,18 @@
 {
-  "livros": [
+  "carona": [
     {
-      "nome": "Call of Chuthulu",
-      "autor": "H.P Lovecraft",
+      "nome": "",
+      "destino": "Mossoró",
+      "data": "2020-10-17",
+      "passageiro": "Matheus",
       "id": 1
     },
     {
-      "nome": "Seja Foda",
-      "autor": "Caio Carneiro",
+      "nome": "",
+      "destino": "Boa Viagem",
+      "data": "2020-10-31",
+      "passageiro": "Paulo",
       "id": 2
-    },
-    {
-      "nome": "A Batalha do Apocalipse",
-      "autor": "Eduardo Spohr",
-      "id": 3
-    },
-    {
-      "nome": "Olha que foi no risca a faca",
-      "autor": "Que eu te conheci",
-      "id": 4
-    },
-    {
-      "nome": "Novo Teste",
-      "autor": "Matheus",
-      "id": 5
     }
   ]
 }

@@ -11,12 +11,12 @@ export default props =>
                 </i>
             </Link>
 
-            <Link to ="/livro">
-                <i className="fa fa-book"></i>Livros
+            <Link to ="/carona">
+                <i className="fa fa-car"></i>Cadastro Carona
             </Link>
 
-            <Link to ="/play">
-                <i className="fa fa-play"></i>Vídeo
+            <Link to ="/caronapassageiro">
+                <i className="fa fa-car"></i> Solicite uma carona ou procure uma vaga
             </Link>
         </nav>
     </aside>
